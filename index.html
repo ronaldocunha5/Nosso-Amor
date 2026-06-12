@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mitinho ❤️ JucaJujuca</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ff758c,#ff7eb3);
+color:white;
+overflow-x:hidden;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+padding:20px;
+text-align:center;
+}
+
+h1{
+font-size:3rem;
+margin-top:20px;
+}
+
+#contador{
+font-size:2.5rem;
+font-weight:bold;
+margin:20px 0;
+}
+
+.mensagem{
+background:rgba(255,255,255,.15);
+padding:25px;
+border-radius:20px;
+margin:25px 0;
+backdrop-filter:blur(10px);
+line-height:1.8;
+}
+
+.galeria{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+margin-top:20px;
+}
+
+.galeria img{
+width:100%;
+height:400px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+transition:.4s;
+}
+
+.galeria img:hover{
+transform:scale(1.03);
+}
+
+audio{
+margin-top:25px;
+width:100%;
+max-width:500px;
+}
+
+.coracao{
+position:fixed;
+top:-20px;
+color:#fff;
+animation:cair linear infinite;
+pointer-events:none;
+}
+
+@keyframes cair{
+to{
+transform:translateY(110vh);
+}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>❤️ Mitinho & JucaJujuca ❤️</h1>
+
+<h2>Estamos juntos há</h2>
+
+<div id="contador"></div>
+
+<div class="mensagem">
+
+<h2>Para minha JucaJujuca ❤️</h2>
+
+<br>
+
+<p>
+Desde o dia 14 de março de 2025, minha vida ganhou mais cor,
+mais sentido e muito mais felicidade.
+</p>
+
+<br>
+
+<p>
+Você se tornou minha companheira, minha melhor amiga e a pessoa
+que faz meus dias serem especiais.
+</p>
+
+<br>
+
+<p>
+Cada sorriso seu ilumina meu caminho, cada abraço seu me traz paz
+e cada momento ao seu lado se transforma em uma lembrança que
+guardarei para sempre no coração.
+</p>
+
+<br>
+
+<p>
+Hoje celebramos não apenas os dias que já vivemos juntos,
+mas todos os momentos incríveis que ainda construiremos lado a lado.
+</p>
+
+<br>
+
+<p>
+JucaJujuca, você é um dos maiores presentes que Deus colocou
+em minha vida. E enquanto existir tempo,
+continuarei escolhendo você todos os dias.
+</p>
+
+<br>
+
+<h3>
+Com todo o meu amor,<br>
+Seu Mitinho ❤️
+</h3>
+
+</div>
+
+<div class="galeria">
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+</div>
+
+<audio controls autoplay loop>
+<source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+<script>
+
+const inicio = new Date("2025-03-14");
+const hoje = new Date();
+
+const dias = Math.floor(
+(hoje - inicio)/(1000*60*60*24)
+);
+
+document.getElementById("contador").innerHTML =
+dias + " dias ❤️";
+
+function criarCoracao(){
+const coracao = document.createElement("div");
+coracao.classList.add("coracao");
+coracao.innerHTML = "❤️";
+
+coracao.style.left = Math.random()*100 + "vw";
+coracao.style.fontSize = (Math.random()*20+15)+"px";
+coracao.style.animationDuration = (Math.random()*5+5)+"s";
+
+document.body.appendChild(coracao);
+
+setTimeout(()=>{
+coracao.remove();
+},10000);
+}
+
+setInterval(criarCoracao,300);
+
+</script>
+
+</body>
+</html>
